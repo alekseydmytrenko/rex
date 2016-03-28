@@ -38,7 +38,7 @@ function sendMail(){
         $message = $_POST['message'];
         $headers = 'From: ' . $email . ' ' . $name . '\r\n';
 
-        if( wp_mail( 'someqwe@mail.ru', 'From site', $message, $headers ) ) {
+        if( wp_mail( $email, 'From site', $message ) ) {
             echo 'Mail sent!';
         } else {
             echo 'Error!';
@@ -46,8 +46,8 @@ function sendMail(){
         die();
     } else {
         echo 'Security error!';
+        die();
     }
-
 }
 
 // Add contact information
