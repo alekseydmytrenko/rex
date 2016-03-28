@@ -36,9 +36,8 @@ function sendMail(){
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
-        $headers = 'From: ' . $email . ' ' . $name . '\r\n';
 
-        if( wp_mail( $email, 'From site', $message ) ) {
+        if( wp_mail( $email, 'From ' . $name, $message ) ) {
             echo 'Mail sent!';
         } else {
             echo 'Error!';
